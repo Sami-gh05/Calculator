@@ -181,7 +181,7 @@ public class Calculator implements ActionListener {
 
             }
             if(operator == '-'){
-                double resultSub = num1 * num2;
+                double resultSub = num1 - num2;
                 DecimalFormat df = new DecimalFormat("#.######");
                 String formattedResult = df.format(resultSub);
                 textBox.setText(String.valueOf(formattedResult));
