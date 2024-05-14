@@ -129,31 +129,43 @@ public class Calculator implements ActionListener {
                 textBox.setText(textBox.getText() + i);
         }
         if(e.getSource()==functionButtons[0]){
-            num1 = Double.parseDouble(textBox.getText());
-            textBox.setText("");
-            operator = '/';
+            String input = textBox.getText();
+            if(input.length() > 0){
+                num1 = Double.parseDouble(input);
+                textBox.setText("");
+                operator = '/';
+            }
         }
         if(e.getSource()==functionButtons[1]){
-            num1 = Double.parseDouble(textBox.getText());
-            textBox.setText("");
-            operator = '*';
+            String input = textBox.getText();
+            if(input.length() > 0){
+                num1 = Double.parseDouble(input);
+                textBox.setText("");
+                operator = '*';
+            }
         }
         if(e.getSource()==functionButtons[2]){
-            num1 = Double.parseDouble(textBox.getText());
-            textBox.setText("");
-            operator = '+';
+            String input = textBox.getText();
+            if(input.length() > 0){
+                num1 = Double.parseDouble(input);
+                textBox.setText("");
+                operator = '+';
+            }
         }
         if(e.getSource()==functionButtons[3]){
-            num1 = Double.parseDouble(textBox.getText());
-            textBox.setText("");
-            operator = '-';
+            String input = textBox.getText();
+            if(input.length() > 0){
+                num1 = Double.parseDouble(input);
+                textBox.setText("");
+                operator = '-';
+            }
         }
         if(e.getSource()==functionButtons[4]){
             String temp = textBox.getText();
             int tmp = 1;
             for(int i = 0; i < temp.length(); i++){
                 if(temp.charAt(i) == '.')
-                   tmp = 0;
+                    tmp = 0;
             }
             if(tmp == 1)
                 textBox.setText(textBox.getText() + '.');
@@ -173,11 +185,16 @@ public class Calculator implements ActionListener {
                 String formattedResult = df.format(resultMul);
                 textBox.setText(String.valueOf(formattedResult));
             }
-                        if(operator == '/'){
-                double resultDiv = num1 / num2;
-                DecimalFormat df = new DecimalFormat("#.######");
-                String formattedResult = df.format(resultDiv);
-                textBox.setText(String.valueOf(formattedResult));
+            if(operator == '/'){
+                if(num2 == 0){
+                    textBox.setText("ERROR");
+                }
+                else {
+                    double resultDiv = num1 / num2;
+                    DecimalFormat df = new DecimalFormat("#.######");
+                    String formattedResult = df.format(resultDiv);
+                    textBox.setText(formattedResult);
+                }
 
             }
             if(operator == '-'){
