@@ -69,7 +69,8 @@ A sleek and modern calculator application built with Java Swing. This calculator
 
 ## 🤝 Contributing
 
-Contributions are welcome! Feel free to submit issues and pull requests.
+Contributions are welcome! Feel free to submit issues and pull requests.  
+Would be glad to see your comments. Feel free to tell the weaknesses and bugs you would encounter 🪰
 
 ---
 
